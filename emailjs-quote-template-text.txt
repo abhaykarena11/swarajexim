@@ -1,0 +1,36 @@
+QUOTE REQUEST - {{product_name}}
+===============================================
+
+New quote request received from Swaraj Exim website
+Request Date: {{date}}
+
+⚡ ACTION REQUIRED: Please respond to this quote request within 24 hours
+
+CUSTOMER INFORMATION:
+---------------------
+Full Name: {{user_name}}
+Company: {{company}}
+Email Address: {{user_email}}
+
+QUOTE DETAILS:
+--------------
+Product: {{product_name}}
+Quantity (Metric Tons): {{quantity}}
+Destination Port: {{destination_port}}
+Country: {{country}}
+
+ADDITIONAL INFORMATION:
+----------------------
+Message: {{message}}
+
+CONTACT INFORMATION:
+-------------------
+📧 Contact Customer: {{user_email}}
+📅 Submitted: {{date}}
+
+This quote request was submitted through the Swaraj Exim website.
+Please respond promptly to maintain customer satisfaction.
+
+===============================================
+Swaraj Exim - Agricultural Export Solutions
+
