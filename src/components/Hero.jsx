@@ -13,7 +13,7 @@ const Hero = ({ onCTAClick }) => {
   }, []);
 
   return (
-    <section id="hero" className="relative w-full h-screen overflow-hidden">
+    <section id="hero" className="relative w-full h-[80vh] sm:h-screen overflow-hidden">
       <div className="relative h-full">
         {slides.map((s, i) => (
           <div

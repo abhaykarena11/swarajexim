@@ -63,9 +63,9 @@ export default function App() {
 
                 <Certifications />
 
-                <div ref={sectionRefs.testimonials}>
+                {/* <div ref={sectionRefs.testimonials}>
                   <Testimonials />
-                </div>
+                </div> */}
 
                 <div ref={sectionRefs.contact}>
                   <Contact />
