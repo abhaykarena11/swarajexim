@@ -45,8 +45,8 @@ const Footer = ({ onNavClick }) => (
             </li>
             <li className="flex items-center">
               <Phone className="mr-3" />
-              <a href="tel:+917874817554" className="hover:text-white">
-                +91 78748 17554
+              <a href="tel:+918799599824" className="hover:text-white">
+                +91 87995 99824
               </a>
             </li>
           </ul>

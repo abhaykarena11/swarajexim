@@ -3,7 +3,7 @@ export const pulseCategories = [
     id: "beans",
     name: "Beans",
     description: "Premium quality beans for global markets",
-    image: "product/beans/beans-category.png",
+    image: "product/list/beans-category.png",
     products: [
       { name: "Chickpeas", image: "product/beans/chickpeas.png", description: "Round, beige-coloured legumes with a nutty flavour. Available in desi (smaller, darker, robust taste) and kabuli (larger, creamier, milder) varieties. Perfect for hummus, salads, curries, and snacks." },
       { name: "Black-eyed Peas", image: "product/beans/black-eyed-peas.png", description: "Small, white legumes with a distinctive black spot. They have a mild flavour and are often used in Southern cuisines as a side dish." },
@@ -32,7 +32,7 @@ export const pulseCategories = [
     id: "lentils",
     name: "Lentils",
     description: "Various colored lentils and dal varieties",
-    image: "product/lentils/lentils-category.png",
+    image: "product/list/lentils-category.png",
     products: [
       { name: "Red Lentils", image: "product/lentils/red-lentils.png", description: "Hulled and split red lentils with a mild, sweet flavour. Cook quickly and are commonly used in Indian and Middle Eastern dishes." },
       { name: "Green Lentils", image: "product/lentils/green-lentils.png", description: "Small, green or brown legumes with a peppery flavour. They hold their shape well when cooked and are suitable for salads and side dishes." },
@@ -56,7 +56,7 @@ export const pulseCategories = [
     id: "peas",
     name: "Peas",
     description: "Split peas and other pea varieties",
-    image: "product/peas/peas-category.png",
+    image: "product/list/peas-category.png",
     products: [
       { name: "Split Peas", image: "product/peas/split-peas.png", description: "Dried, hulled peas that are split in half. Come in yellow and green varieties. Yellow split peas are often used in soups and Indian dals, while green split peas are popular in European and North American dishes." },
       { name: "Yellow Split Peas", image: "product/peas/yellow-split-peas.png", description: "Hulled and split yellow peas used in a variety of dishes, including soups and Indian dals." },
@@ -68,7 +68,7 @@ export const pulseCategories = [
     id: "soybeans",
     name: "Soybeans",
     description: "Soybean products and derivatives",
-    image: "product/soybeans/soybeans-category.png",
+    image: "product/list/soybeans-category.png",
     products: [
       { name: "Soybeans", image: "product/soybeans/soybeans.png", description: "Versatile legume with a high protein content. Foundation of various soy products such as tofu, tempeh, and soy milk." },
       { name: "Edamame", image: "product/soybeans/edamame.png", description: "Young, green soybeans in the pod. Typically served as a starter or snack after being boiled or steamed." },
@@ -79,7 +79,7 @@ export const pulseCategories = [
     id: "specialty",
     name: "Specialty Pulses",
     description: "Unique and specialty pulse varieties",
-    image: "product/specialty/specialty-category.png",
+    image: "product/list/specialty-category.png",
     products: [
       { name: "Horse Gram", image: "product/specialty/horse-gram.png", description: "Lesser-known legume with a nutty flavour, often used in South Indian cuisine in dishes like rasam." },
       { name: "Cowpeas", image: "product/specialty/cowpeas.png", description: "Also known as black-eyed peas, commonly used in Southern cuisine in dishes like Hoppin' John." },
@@ -225,6 +225,5 @@ export const navLinks = [
   { name: "About", target: "about" },
   { name: "Products", target: "products" },
   { name: "Process", target: "process" },
-  { name: "Testimonials", target: "testimonials" },
   { name: "Contact", target: "contact" },
 ];

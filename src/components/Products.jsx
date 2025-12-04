@@ -1,19 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Section from "./Section";
 import { products, pulseCategories, pulseInfo } from "../data/mockData";
 
 const Products = () => {
   const navigate = useNavigate();
-  const [expandedCategory, setExpandedCategory] = useState(null);
+  const [expandedCategories, setExpandedCategories] = useState(new Set()); // Changed to a Set
+  const categoryRefs = useRef({});
 
   const handleQuoteClick = (product) => {
+    console.log("Requesting quote for:", product.name);
     // Navigate to the quote page with the product name as a URL parameter
     navigate(`/quote/${encodeURIComponent(product.name)}`);
   };
 
   const toggleCategory = (categoryId) => {
-    setExpandedCategory(expandedCategory === categoryId ? null : categoryId);
+    setExpandedCategories((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(categoryId)) {
+        newSet.delete(categoryId);
+      } else {
+        newSet.add(categoryId);
+        // Only scroll when expanding a new category
+        if (categoryRefs.current[categoryId]) {
+          categoryRefs.current[categoryId].scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -31,17 +45,23 @@ const Products = () => {
         
         <div className="space-y-6">
           {pulseCategories.map((category) => (
-            <div key={category.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div 
+              key={category.id} 
+              ref={el => categoryRefs.current[category.id] = el}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
               <div 
                 className="p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-300"
                 onClick={() => toggleCategory(category.id)}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center">
-                      <span className="text-2xl font-bold text-green-600">
-                        {category.name.charAt(0)}
-                      </span>
+                    <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={category.image} 
+                        alt={category.name} 
+                        className="w-full h-full object-cover" 
+                      />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-gray-800">{category.name}</h3>
@@ -54,7 +74,7 @@ const Products = () => {
                   <div className="text-gray-400">
                     <svg 
                       className={`w-6 h-6 transform transition-transform duration-300 ${
-                        expandedCategory === category.id ? 'rotate-180' : ''
+                        expandedCategories.has(category.id) ? 'rotate-180' : '' // Updated condition
                       }`} 
                       fill="none" 
                       stroke="currentColor" 
@@ -66,7 +86,7 @@ const Products = () => {
                 </div>
               </div>
               
-              {expandedCategory === category.id && (
+              {expandedCategories.has(category.id) && ( // Updated condition
                 <div className="border-t bg-gray-50 p-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {category.products.map((product, index) => (
@@ -113,58 +133,8 @@ const Products = () => {
           </p>
         </div>
 
-        {/* Culinary Uses Section */}
-        {/* <div className="mt-12">
-          <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">Culinary Inspiration</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pulseInfo.culinaryUses.map((use, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h4 className="text-xl font-bold text-green-600 mb-3">{use.category}</h4>
-                <p className="text-gray-700">{use.description}</p>
-              </div>
-            ))}
-          </div>
-        </div> */}
-      </div>
-
-      {/* Other Products Section */}
-      {/* <div>
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Other Agricultural Products</h2>
-        <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
-          Beyond pulses, we also offer a variety of premium agricultural products.
-        </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <div
-              key={product.name}
-              className="group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white flex flex-col"
-            >
-              <div className="relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 mb-4 flex-grow">
-                  {product.description}
-                </p>
-                <button 
-                  onClick={() => handleQuoteClick(product)}
-                  className="mt-auto bg-green-100 text-green-800 font-semibold py-2 px-4 rounded-lg group-hover:bg-green-600 group-hover:text-white transition-colors duration-300"
-                >
-                  Request a Quote
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
+      </div>
     </Section>
   );
 };

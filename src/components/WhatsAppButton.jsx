@@ -1,5 +1,5 @@
 const WhatsAppButton = () => {
-  const phoneNumber = "+917874817554"; // Replace with employer's WhatsApp number
+  const phoneNumber = "+918799599824"; // Replace with employer's WhatsApp number
   const message =
     "Hi, I’m interested in your import-export products. Could you please share more details?"; // Default message
 

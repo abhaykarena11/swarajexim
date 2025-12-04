@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Send, Loader, ArrowLeft } from "lucide-react";
-import { products } from "../../data/mockData";
+import { pulseCategories } from "../../data/mockData";
 import emailjs from "@emailjs/browser";
 
 // This is now a standalone Quote Page component
@@ -9,8 +9,9 @@ const QuoteModal = () => {
   const { productName } = useParams();
   const navigate = useNavigate();
 
-  // Find the product from the URL parameter
-  const product = products.find(
+  const allProducts = pulseCategories.flatMap(category => category.products);
+
+  const product = allProducts.find(
     (p) => p.name === decodeURIComponent(productName)
   );
 
