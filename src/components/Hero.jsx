@@ -25,7 +25,7 @@ const Hero = ({ onCTAClick }) => {
             {/* DIV for the background image ONLY */}
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${s.img})` }}
+              style={{ backgroundImage: `url(${s.image})` }}
             />
             {/* FIX: Added the single, correct overlay back in for readability */}
             <div className="absolute inset-0 bg-black opacity-50" />

@@ -16,14 +16,14 @@ const Header = ({ onNavClick }) => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMenuOpen
           ? "bg-white shadow-md"
-          : "bg-transparent text-white"
+          : "bg-white shadow-md"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <h1
             className={`text-2xl font-bold transition-colors ${
-              isScrolled || isMenuOpen ? "text-green-700" : "text-white"
+              isScrolled || isMenuOpen ? "text-green-700" : "text-green-700"
             }`}
           >
             SWARAJ EXIM
@@ -36,7 +36,7 @@ const Header = ({ onNavClick }) => {
                 className={`font-medium relative group transition-colors ${
                   isScrolled || isMenuOpen
                     ? "text-gray-700 hover:text-green-600"
-                    : "text-white hover:text-green-200"
+                    : "text-gray-700 hover:text-green-600"
                 }`}
               >
                 {item.name}

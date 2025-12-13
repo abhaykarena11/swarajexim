@@ -142,13 +142,25 @@ export const products = [
 
 export const slides = [
   {
-    img: "https://placehold.co/1920x1080/2C5F2D/FFFFFF?text=Quality+Agricultural+Exports",
+    image: "product/soybeans/soybeans.png",
+    title: "Delivering Nature's Best, Worldwide",
+    subtitle:
+      "Your trusted partner for high-quality, ethically sourced agricultural products.",
+  },
+   {
+    image: "product/beans/adzuki-beans.png",
+    title: "Delivering Nature's Best, Worldwide",
+    subtitle:
+      "Your trusted partner for high-quality, ethically sourced agricultural products.",
+  },
+   {
+    image: "product/beans/mung-beans.png",
     title: "Delivering Nature's Best, Worldwide",
     subtitle:
       "Your trusted partner for high-quality, ethically sourced agricultural products.",
   },
   {
-    img: "https://placehold.co/1920x1080/97BC62/FFFFFF?text=From+Farm+to+Port",
+    image: "product/lentils/toor-dal.png",
     title: "Seamless Supply Chain Solutions",
     subtitle:
       "We manage the entire export process, ensuring timely and reliable delivery.",
